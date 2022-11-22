@@ -46,31 +46,29 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 5,
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Center(
                   child: Text(
                     questions[q],
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25, color: Colors.black),
+                    style: const TextStyle(fontSize: 25, color: Colors.black),
                   ),
                 ),
               ),
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 child: ElevatedButton(
                   onPressed: () {
                     bool correctAns = true;
                     setState(() {
                       if (correctAns == ans[q]) {
-                        scoreKeeper.add(Icon(
+                        scoreKeeper.add(const Icon(
                           Icons.check,
                           color: Colors.green,
                         ));
-                        
-                      }
-                      else {
+                      } else {
                         scoreKeeper.add(const Icon(
                           Icons.close,
                           color: Colors.red,
@@ -79,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                       q = q + 1;
                     });
                   },
-                  child: const Text('True'),
+                  child: Text('True'),
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.greenAccent)),
@@ -88,7 +86,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 child: ElevatedButton(
                   onPressed: () {
                     bool correctAns = false;
@@ -98,8 +96,7 @@ class _HomePageState extends State<HomePage> {
                           Icons.check,
                           color: Colors.green,
                         ));
-                      }
-                      else {
+                      } else {
                         scoreKeeper.add(const Icon(
                           Icons.close,
                           color: Colors.red,
@@ -108,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                       q = q + 1;
                     });
                   },
-                  child: const Text('False'),
+                  child: Text('False'),
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.redAccent)),
